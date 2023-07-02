@@ -1,17 +1,20 @@
+// NOTE this example mirrors a-basic-promise.js, but with an async function
+
 const { log } = require('../utils/async-hooks');
 
 log('A');
 
 async function asyncFunction() {
   log('B');
-  return 'D';
+  return;
 }
 
+// Async functions return promises
 const promise = asyncFunction();
 
 promise
-  .then((value) => {
-    log(value);
+  .then(() => {
+    log('D');
   })
   .catch((err) => {
     log(err);

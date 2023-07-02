@@ -4,12 +4,12 @@ log('A');
 
 const promise = new Promise((resolve) => {
   log('B'); // Promise executor function called synchronously, same execution context as A and C
-  resolve('D');
+  resolve();
 });
 
 promise
-  .then((value) => {
-    log(value);
+  .then(() => {
+    log('D');
   })
   .catch((err) => {
     log(err);
