@@ -1,4 +1,7 @@
-// This example mirrors a-basic-promise.js, but with an async function
+/**
+ * This example mirrors a-basic-promise.js, but with an async function. Note that async functions
+ * resolve when they return, which in this case is implicitly.
+ */
 
 const { log } = require('../utils/async-hooks');
 
@@ -6,7 +9,6 @@ log('A');
 
 async function asyncFunction() {
   log('B');
-  return;
 }
 
 // Async functions return promises
