@@ -30,31 +30,34 @@ const promise3 = asyncFunction3();
 setTimeout(() => {
   // Fires at the start of the next iteration of the event loop after the promise (microtask)
   // queue of the first iteration is exhausted.
-  log('N');
+  log('O');
 });
 
 try {
   (async () => {
+    // Beats F because this async function is an async Immediately Invoked Function Expression,
+    // which executes synchronously until its first await keyword.
+    log('E');
     await promise1;
     // The double calls to log after each await looks odd here, but showcases the readability
     // improvements of async/await.
-    log('F');
     log('G');
-    await promise2;
     log('H');
+    await promise2;
     log('I');
-    await promise3;
     log('J');
+    await promise3;
+    log('K');
     async function asyncFunction4() {
-      log('K');
+      log('L');
     }
     const promise4 = asyncFunction4();
-    log('L');
-    await promise4;
     log('M');
+    await promise4;
+    log('N');
   })();
 } catch (err) {
   log(err);
 }
 
-log('E'); // Still called in the root execution context before await promise1
+log('F'); // Still called in the root execution context before await promise1
