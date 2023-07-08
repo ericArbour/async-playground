@@ -30,17 +30,13 @@ const promise = new Promise((resolve) => {
   resolve();
 });
 
-promise
-  .then(() => {
-    log('D'); // Promise resolution callbacks fire at the end of the current event loop iteration
-    setTimeout(() => {
-      // This setTimeout is called in the same event loop iteration as the setTimeouts called in the
-      // root execution context. The callback is called in the same event loop iteration as E and F
-      log('G');
-    }, 0);
-  })
-  .catch((err) => {
-    log(err);
-  });
+promise.then(() => {
+  log('D'); // Promise resolution callbacks fire at the end of the current event loop iteration
+  setTimeout(() => {
+    // This setTimeout is called in the same event loop iteration as the setTimeouts called in the
+    // root execution context. The callback is called in the same event loop iteration as E and F
+    log('G');
+  }, 0);
+});
 
 log('C');

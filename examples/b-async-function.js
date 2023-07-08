@@ -14,12 +14,8 @@ async function asyncFunction() {
 // Async functions return promises
 const promise = asyncFunction();
 
-promise
-  .then(() => {
-    log('D');
-  })
-  .catch((err) => {
-    log(err);
-  });
+promise.then(() => {
+  log('D');
+});
 
 log('C');

@@ -32,40 +32,24 @@ setTimeout(() => {
   log('N');
 }, 0);
 
-promise1
-  .then(() => {
-    log('F');
-    promise2
-      .then(() => {
-        log('H');
-        promise3
-          .then(() => {
-            log('J');
-            const promise4 = new Promise((resolve) => {
-              log('K');
-              resolve();
-            });
-            promise4
-              .then(() => {
-                log('M');
-              })
-              .catch((err) => {
-                log(err);
-              });
-            log('L');
-          })
-          .catch((err) => {
-            log(err);
-          });
-        log('I');
-      })
-      .catch((err) => {
-        log(err);
+promise1.then(() => {
+  log('F');
+  promise2.then(() => {
+    log('H');
+    promise3.then(() => {
+      log('J');
+      const promise4 = new Promise((resolve) => {
+        log('K');
+        resolve();
       });
-    log('G');
-  })
-  .catch((err) => {
-    log(err);
+      promise4.then(() => {
+        log('M');
+      });
+      log('L');
+    });
+    log('I');
   });
+  log('G');
+});
 
 log('E');
