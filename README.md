@@ -1,6 +1,6 @@
 # async-playground
 
-Exercises from https://github.com/jasnell/broken-promises.
+Exercises inspired by https://github.com/jasnell/broken-promises.
 
 ### Trace Node
 
@@ -10,3 +10,4 @@ Exercises from https://github.com/jasnell/broken-promises.
 ### Resources
 
 1. https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick
+2. https://stackoverflow.com/questions/43036229/is-it-an-anti-pattern-to-use-async-await-inside-of-a-new-promise-constructor

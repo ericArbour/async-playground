@@ -1,3 +1,8 @@
+/**
+ * This example showcases how calls to setTimeout, even if given a wait ms value of 0,
+ * are deferred to the timers phase of the next iteration of the event loop.
+ */
+
 const { log } = require('../utils/async-hooks');
 
 log('A');

@@ -30,7 +30,7 @@ setTimeout(() => {
   // Fires at the start of the next iteration of the event loop after the promise (microtask)
   // queue of the first iteration is exhausted.
   log('N');
-});
+}, 0);
 
 promise1
   .then(() => {

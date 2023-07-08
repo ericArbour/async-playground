@@ -1,4 +1,4 @@
-// NOTE this example mirrors a-basic-promise.js, but with an async function
+// This example mirrors a-basic-promise.js, but with an async function
 
 const { log } = require('../utils/async-hooks');
 
